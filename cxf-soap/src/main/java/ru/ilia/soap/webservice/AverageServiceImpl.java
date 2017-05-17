@@ -6,6 +6,7 @@ import net.webservicex.StatisticsSoap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import ru.ilia.soap.client.SoapClient;
 import ru.ilia.soap.exception.BaseException;
 import ru.ilia.soap.exception.SumLessZeroException;
 
@@ -20,28 +21,21 @@ import java.util.List;
 @Service("AverageService")
 public class AverageServiceImpl implements AverageService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    private static final StatisticsSoap statisticsSoap=new Statistics().getStatisticsSoap();
 
     @Override
     public double calculateAverage(List<Double> array) {
-        for (double a : array){
-            logger.info("In double: "+a);
+        for (double a : array) {
+            logger.info("In double: " + a);
         }
 
-        ArrayOfDouble arrayOfDouble=new ArrayOfDouble();
-        arrayOfDouble.getDouble().addAll(array);
-
-        Holder<Double> average=new Holder<Double>();
-        Holder<Double> sum=new Holder<Double>();
-
-        statisticsSoap.getStatistics(arrayOfDouble, sum,average,null,null,null);
-
-        logger.info("Average: "+average.value);
-        logger.info("Sum: "+sum.value);
-        if(sum.value<0){
+        double result = -1;
+        SoapClient client = new SoapClient();
+        try {
+            result = client.calculateAverage(array);
+        } catch (ru.ilia.soap.client.exception.SumLessZeroException e) {
             throw new SumLessZeroException();
         }
 
-        return average.value;
+        return result;
     }
 }

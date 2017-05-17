@@ -26,7 +26,7 @@
                         <configuration>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>http://www.webservicex.net/Statistics.asmx?WSDL</wsdl>
+                                    <wsdl>${wsdl-statistics.url}</wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
