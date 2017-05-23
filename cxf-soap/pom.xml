@@ -13,10 +13,10 @@
     <packaging>bundle</packaging>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>ru</groupId>-->
-            <!--<artifactId>statistics-codegen</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>ru</groupId>
+            <artifactId>statistics-codegen</artifactId>
+        </dependency>
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -44,10 +44,6 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<artifactId>cxf-rt-frontend-jaxws</artifactId>-->
-            <!--<groupId>org.apache.cxf</groupId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
@@ -57,14 +53,6 @@
             <artifactId>cxf-rt-transports-http</artifactId>
         </dependency>
 
-
-        <!-- Servlet -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
     </dependencies>
     <build>
         <finalName>cxf-jax-ws</finalName>
@@ -72,23 +60,8 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>bundle</goal>
-                        </goals>
-                        <phase>package</phase>
-                    </execution>
-                </executions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Description>${project.description}</Bundle-Description>
-                        <Import-Package>
-                            *
-                        </Import-Package>
                         <Export-Package>
                             ru.ilia.osgi.service
                         </Export-Package>
@@ -98,20 +71,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>${compile.version}</source>
-                    <target>${compile.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId>
-                <version>${maven-tomcat-plugin.version}</version>
-                <configuration>
-                    <port>${maven-tomcat-plugin.port}</port>
-                    <warFile>${project.basedir}/target/${project.build.finalName}.war</warFile>
-                </configuration>
             </plugin>
         </plugins>
 

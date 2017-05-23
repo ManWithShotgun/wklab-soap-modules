@@ -19,8 +19,10 @@
         <cxf.version>3.1.11</cxf.version>
         <log4j.version>1.2.16</log4j.version>
         <servlet-api.version>2.5</servlet-api.version>
-        <wsdl-statistics.url>http://www.webservicex.net/Statistics.asmx?WSDL</wsdl-statistics.url>
+        <!--<wsdl-statistics.url>http://www.webservicex.net/Statistics.asmx?WSDL</wsdl-statistics.url>-->
+        <wsdl-statistics.url>Statistics.wsdl</wsdl-statistics.url>
 
+        <karaf-maven-plugin.version>4.0.0</karaf-maven-plugin.version>
         <maven-compiler-plugin.version>2.1</maven-compiler-plugin.version>
         <compile.version>1.8</compile.version>
         <maven-tomcat-plugin.version>1.0-beta-1</maven-tomcat-plugin.version>
@@ -92,6 +94,91 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${compile.version}</source>
+                        <target>${compile.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-codegen-plugin</artifactId>
+                    <version>3.1.10</version>
+                    <executions>
+                        <execution>
+                            <id>generate-sources</id>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <wsdlOptions>
+                                    <wsdlOption>
+                                        <wsdl>${wsdl-statistics.url}</wsdl>
+                                    </wsdlOption>
+                                </wsdlOptions>
+                            </configuration>
+                            <goals>
+                                <goal>wsdl2java</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>2.3.7</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>bundle</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <instructions>
+                            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                            <Bundle-Description>${project.description}</Bundle-Description>
+                            <Import-Package>
+                                *
+                            </Import-Package>
+                            <Export-Package>
+                                *
+                            </Export-Package>
+                        </instructions>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-maven-plugin</artifactId>
+                    <version>${karaf-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <featuresFile>
+                            ${project.basedir}/src/main/resources/features.xml
+                        </featuresFile>
+                        <outputDirectory>
+                            ${env.KARAF_HOME}/deploy
+                        </outputDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>kar</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 
 </project>

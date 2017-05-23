@@ -1,16 +1,12 @@
 package ru.ilia.soap.webservice;
 
-//import net.webservicex.ArrayOfDouble;
-//import net.webservicex.Statistics;
-//import net.webservicex.StatisticsSoap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-//import ru.ilia.soap.client.SoapClient;
-import ru.ilia.soap.exception.BaseException;
+import ru.ilia.soap.client.SoapClient;
 import ru.ilia.soap.exception.SumLessZeroException;
 
 import javax.jws.WebService;
-import javax.xml.ws.Holder;
 import java.util.List;
 
 /**
@@ -28,13 +24,12 @@ public class AverageServiceImpl implements AverageService {
         }
 
         double result = -1;
-//        SoapClient client = new SoapClient();
-//        try {
-//            result = client.calculateAverage(array);
-//        } catch (ru.ilia.soap.client.exception.SumLessZeroException e) {
-//            throw new SumLessZeroException();
-//        }
-        result=234;
+        SoapClient client = new SoapClient();
+        try {
+            result = client.calculateAverage(array);
+        } catch (ru.ilia.soap.client.exception.SumLessZeroException e) {
+            throw new SumLessZeroException();
+        }
         return result;
     }
 }

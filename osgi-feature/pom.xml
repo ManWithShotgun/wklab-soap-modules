@@ -14,27 +14,9 @@
 
     <build>
         <plugins>
-            <!--<plugin>-->
-            <!--<groupId>org.apache.karaf.tooling</groupId>-->
-            <!--<artifactId>features-maven-plugin</artifactId>-->
-            <!--<version>2.3.2</version>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<id>create-kar</id>-->
-            <!--<goals>-->
-            <!--<goal>create-kar</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-            <!--<featuresFile>${project.basedir}/src/main/resources/features.xml</featuresFile>-->
-            <!--</configuration>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>4.0.0</version>
-                <extensions>true</extensions>
             </plugin>
         </plugins>
     </build>
