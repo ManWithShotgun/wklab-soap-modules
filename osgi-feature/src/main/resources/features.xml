@@ -2,7 +2,7 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.2.0">
 
-    <feature name='enterprise-sample' version="${project.version}" resolver="(obr)">
+    <feature name='enterprise-sample' version="1.0-SNAPSHOT" resolver="(obr)">
 
         <feature>http</feature>
         <feature>cxf</feature>
