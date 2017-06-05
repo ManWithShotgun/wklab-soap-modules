@@ -14,6 +14,21 @@
         <module>osgi-feature</module>
     </modules>
 
+    <profiles>
+        <profile>
+            <id>no-env.KARAF_HOME-outputDir</id>
+            <activation>
+                <property>
+                    <name>karaf-maven-plugin.outputDir</name>
+                </property>
+            </activation>
+            <properties>
+                <!-- Override only if necessary -->
+                <karaf-maven-plugin.outputDir>${project.basedir}/target</karaf-maven-plugin.outputDir>
+            </properties>
+        </profile>
+    </profiles>
+
     <properties>
         <slf4j.version>1.6.1</slf4j.version>
         <cxf.version>3.1.11</cxf.version>
@@ -29,6 +44,7 @@
         <compile.version>1.8</compile.version>
         <maven-tomcat-plugin.version>1.0-beta-1</maven-tomcat-plugin.version>
         <maven-tomcat-plugin.port>9999</maven-tomcat-plugin.port>
+        <karaf-maven-plugin.outputDir>${env.KARAF_HOME}/deploy</karaf-maven-plugin.outputDir>
     </properties>
 
     <dependencyManagement>
@@ -179,7 +195,7 @@
                             ${project.basedir}/src/main/resources/features.xml
                         </featuresFile>
                         <outputDirectory>
-                            ${env.KARAF_HOME}/deploy
+                            ${karaf-maven-plugin.outputDir}
                         </outputDirectory>
                     </configuration>
                     <executions>
