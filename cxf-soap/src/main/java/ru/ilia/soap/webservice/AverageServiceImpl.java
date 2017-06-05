@@ -19,8 +19,9 @@ public class AverageServiceImpl implements AverageService {
 
     @Override
     public double calculateAverage(List<Double> array) {
+        logger.info("Receiving array:");
         for (double a : array) {
-            logger.info("In double: " + a);
+            logger.info("double "+a);
         }
 
         double result = -1;

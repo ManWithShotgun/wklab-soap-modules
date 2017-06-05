@@ -8,6 +8,6 @@
         <feature>cxf</feature>
 
         <bundle>mvn:ru/cxf-soap/1.0-SNAPSHOT</bundle>
-        <bundle>mvn:ru/statistics-codegen/2.0</bundle>
+        <bundle>mvn:ru/statistics-codegen/1.0-SNAPSHOT</bundle>
     </feature>
 </features>

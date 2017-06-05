@@ -53,6 +53,13 @@
             <artifactId>cxf-rt-transports-http</artifactId>
         </dependency>
 
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>cxf-jax-ws</finalName>

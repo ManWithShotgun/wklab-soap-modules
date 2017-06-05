@@ -22,13 +22,13 @@
   <wsdl:message name="calculateAverageResponse">
     <wsdl:part element="tns:calculateAverageResponse" name="parameters"></wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="AverageService">
+  <wsdl:portType name="ru.ilia.soap.webservice.AverageServiceTest">
     <wsdl:operation name="calculateAverage">
       <wsdl:input message="tns:calculateAverage" name="calculateAverage"></wsdl:input>
       <wsdl:output message="tns:calculateAverageResponse" name="calculateAverageResponse"></wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="AverageServiceImplServiceSoapBinding" type="tns:AverageService">
+  <wsdl:binding name="AverageServiceImplServiceSoapBinding" type="tns:ru.ilia.soap.webservice.AverageServiceTest">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="calculateAverage">
       <soap:operation soapAction="" style="document"/>
@@ -54,7 +54,7 @@
          <double>18</double>
       </web:calculateAverage>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/AverageService/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call><con:call id="551c7ec5-d018-4f31-941c-5ebb98a104b1" name="testExceprion"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap.ilia.ru/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/ru.ilia.soap.webservice.AverageServiceTest/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call><con:call id="551c7ec5-d018-4f31-941c-5ebb98a104b1" name="testExceprion"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap.ilia.ru/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:calculateAverage>\r
@@ -63,7 +63,7 @@
          <double>-10</double>
       </web:calculateAverage>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/AverageService/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call><con:call id="498831b5-7661-4f8e-a119-f6f3d54cc8ff" name="test1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap.ilia.ru/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/ru.ilia.soap.webservice.AverageServiceTest/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call><con:call id="498831b5-7661-4f8e-a119-f6f3d54cc8ff" name="test1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap.ilia.ru/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:calculateAverage>\r
@@ -74,7 +74,7 @@
          <double>7716</double>
       </web:calculateAverage>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/AverageService/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call><con:call id="995d95cf-d976-40fc-bb0a-37e7dbd40e17" name="test2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap.ilia.ru/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/ru.ilia.soap.webservice.AverageServiceTest/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call><con:call id="995d95cf-d976-40fc-bb0a-37e7dbd40e17" name="test2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap.ilia.ru/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:calculateAverage>\r
@@ -84,4 +84,4 @@
 
       </web:calculateAverage>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/AverageService/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.soap.ilia.ru/ru.ilia.soap.webservice.AverageServiceTest/calculateAverage"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
